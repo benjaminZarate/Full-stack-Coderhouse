@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Contacto</title>
+</head>
+<main>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Xika's Creations</a></li>
+                <li><a href="./products.html">Productos</a></li>
+                <li><a href="./news.html">Novedades</a></li>
+                <li><a class="currentTab" href="./contact.html">Contacto</a></li>
+                <li><a href="./about.html">Nosotros</a></li>
+            </ul>
+        </nav>
+        <hr>
+        <header>
+            <h1>Contacto</h1>
+        </header>
+            <form action="thanks.html" method="get" enctype="application/x-www-form-urlencoded">
+                <p><label class="roboto" for="nombre">Nombre: </label></p>
+            <input class="styleInput" type="text" name="nombre" placeholder="Ingresa tu nombre"/>
+            
+            <p><label for="apellido">Apellido: </label></p>
+            <input class="styleInput" type="text" name="apellido" placeholder="Ingresa tu apellido"/>
+            
+            <p><label for="email">Email: </label></p>
+            <input class="styleInput" type="text" name="email" placeholder="Ingresa tu email"/>
+            
+            <p><label for="motivo">Motivo de contacto</label></p>
+            <select class="styleInput" name="motivo">
+                <option class="roboto" value="Feedback">Feedback</option>
+                <option value="Felicitaciones">Felicitaciones</option>
+                <option value="Reclamo">Reclamo</option>
+            </select>
+            
+            <p><label for="newsletter">¿Desea recibir nuestro newsletter?
+                <input type="checkbox" name="newsletter"/>
+            </label></p>
+            
+            
+            <p><label for="comentarios">Comentarios</label></p>
+            <textarea class="styleInput" name="comentarios" id="comentarios" rows="5" cols="40"></textarea>
+            <div>
+                <input class="buttons" type="submit" value="Enviar" />
+                <input class="buttons" type="reset" value="Limpiar" />
+            </div>
+        </form>
+        <hr>
+        <footer>
+            <div>
+                <h2>©2022 Xika’s Creations</h2>
+                <a href="https://www.instagram.com/x.camposm/?hl=es" target="_blank">
+                    <img src="../assets/Instagram_logo_2016.svg.webp" width="30" height="30">
+                </a>
+            </div>
+            <ul>
+                <li><a href="../index.html">Xika's Creations</a></li>
+                <li><a href="./products.html">Productos</a></li>
+                <li><a href="./news.html">Novedades</a></li>
+                <li><a href="./contact.html">Contacto</a></li>
+                <li><a href="./about.html">Nosotros</a></li>
+            </ul>
+        </footer>
+    </body>
+</main>
+</html>

@@ -1,0 +1,128 @@
+li{
+    display: inline-block;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.currentTab{
+    font-weight: bold;
+    margin: 10px;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content{
+    display: inline-block;
+    align-items: center;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+}
+
+/* Footer Style */
+footer{
+    display: flex;
+    align-items: center;
+    /* background-color: grey; */
+    height: 100px;
+    /* position: fixed;
+    bottom: 0;
+    left: 0; */
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer ul li {
+    font-size: 13px;
+}
+
+footer div{
+    display: flex;
+    align-items: center;
+}
+
+/* Forms Style */
+fieldset{
+    display: inline-block;
+    flex-direction: row;
+    width: 50%;
+}
+
+.styleInput{
+    border-radius: 5px;
+    width: 80%;
+    padding: 12px;
+}
+
+.roboto {
+    font-family: 'Roboto' sans-serif;
+}
+
+.buttons{
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+input[type=checkbox]{
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+}
+
+/* Index Style */
+.intro{
+    display: inline-block;
+    overflow-wrap: break-word;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+.intro p{
+    margin: auto;
+    width: 50%;
+    font-size: 19px;
+    text-align: center;
+}
+
+/* Products Style */
+.productsList{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.product{
+    display: inline-block;
+    width: 300px;
+    padding: 10px;
+}
+
+.product img{
+    width: 300px;
+    height: 300px;
+}
+
+.product p{
+    overflow-wrap: break-word;
+}
+
+.price{
+    font-weight: bold;
+}
