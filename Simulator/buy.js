@@ -1,7 +1,7 @@
 let envioTotal = 0; //costos de envios, este aumentara segun la cantidad de productos
 let total = 0; //Precio total a gastar
 
-var listProductos = "";
+const listProducts = [];
 
 class Notebook
 {
@@ -32,17 +32,26 @@ document.getElementById("notebook2").addEventListener("click", function() {
 document.getElementById("notebook3").addEventListener("click", function() {
     AddNotebook(_notebook3);
 }, false);
+document.getElementById("show").addEventListener("click", function() {
+    ShowProducts();
+}, false);
 
 function AddNotebook(notebook)
 {
     total += notebook.precio;
     envioTotal += notebook.envio;
     total += notebook.envio;
-    listProductos += "- " + notebook.nombre + "\n";
-    console.log("Productos: ");
-    console.log(listProductos);
-    console.log("Envio: " + envioTotal);
-    console.log("Precio total: " + total);
-    console.log("--------------------");
+    listProducts.push(notebook);
+    console.log(notebook.nombre+" añadido a su carrito");
+}
 
+function ShowProducts()
+{
+    console.log("Productos");
+    listProducts.forEach(element => {
+        console.log(element.nombre);
+    });
+    console.log("--------------------");
+    console.log("Envio: " + envioTotal);
+    console.log("Precio total: "+total);
 }
