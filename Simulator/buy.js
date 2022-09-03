@@ -23,14 +23,14 @@ const _notebook3 = new Notebook("Libreta blanca y rosa", 11000, 3000);
 
 
 document.getElementById('notebook1').addEventListener('click', function() {
-    AddNotebook(_notebook1);
+    NotebookAmount(_notebook1);
 }, false);
 
 document.getElementById("notebook2").addEventListener("click", function() {
-    AddNotebook(_notebook2);
+    NotebookAmount(_notebook2);
 }, false);
 document.getElementById("notebook3").addEventListener("click", function() {
-    AddNotebook(_notebook3);
+    NotebookAmount(_notebook3);
 }, false);
 document.getElementById("show").addEventListener("click", function() {
     ShowProducts();
@@ -42,7 +42,16 @@ function AddNotebook(notebook)
     envioTotal += notebook.envio;
     total += notebook.envio;
     listProducts.push(notebook);
-    console.log(notebook.nombre+" añadido a su carrito");
+}
+
+function NotebookAmount(notebook)
+{
+    let amount = prompt("¿Cuantas libretas desea?");
+    for(let i = 0; i < amount; i++)
+    {
+        AddNotebook(notebook);
+    } 
+    alert("Han sido añadidas con exito");
 }
 
 function ShowProducts()
