@@ -1,5 +1,6 @@
 let envioTotal = 0; //costos de envios, este aumentara segun la cantidad de productos
 let total = 0; //Precio total a gastar
+const contenedor = document.createElement("div");
 
 const listProducts = [];
 
@@ -32,9 +33,6 @@ document.getElementById("notebook2").addEventListener("click", function() {
 document.getElementById("notebook3").addEventListener("click", function() {
     NotebookAmount(_notebook3);
 }, false);
-document.getElementById("show").addEventListener("click", function() {
-    ShowProducts();
-}, false);
 
 function AddNotebook(notebook)
 {
@@ -46,21 +44,28 @@ function AddNotebook(notebook)
 
 function NotebookAmount(notebook)
 {
+    contenedor.remove();
     let amount = prompt("¿Cuantas libretas desea?");
     for(let i = 0; i < amount; i++)
     {
         AddNotebook(notebook);
+        
     } 
     alert("Han sido añadidas con exito");
+    ShowProducts();
 }
 
 function ShowProducts()
 {
-    console.log("Productos");
+    contenedor.remove();
+    contenedor.innerHTML = ``;
     listProducts.forEach(element => {
-        console.log(element.nombre);
+        contenedor.innerHTML += `<h3>-${element.nombre} : ${element.precio}</h3>`;
     });
-    console.log("--------------------");
-    console.log("Envio: " + envioTotal);
-    console.log("Precio total: "+total);
+    contenedor.innerHTML +=  `<h4>---------------------</h4>`;
+    contenedor.innerHTML +=  `<h2>Envio: $${envioTotal}</h2>`;
+    contenedor.innerHTML +=  `<h2>Total: $${total}</h2>`;
+    document.body.appendChild(contenedor);
 }
+
+
