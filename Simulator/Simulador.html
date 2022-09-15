@@ -9,9 +9,22 @@
 <body>
     <h1>Simulador interactivo</h1>
     <p>Se realizará un simulador de compras de libretas artesanales</p>
-    <button id="notebook1">Libreta horizontal</button>
-    <input id="notebook2" type="button" value="Libreta horizontal multicolor" />
-    <input id="notebook3" type="button" value="Libreta blanca y rosa" />
+    <div>
+        <p>Libreta horizontal</p>
+        <input id="amount1" type="text"/>
+        <button id="notebook1">Añadir carrito</button>
+    </div>
+    <div>
+        <p>Libreta horizontal multicolor</p>
+        <input id="amount2" type="number"/>
+        <input id="notebook2" type="button" value="Añadir carrito" />
+    </div>
+    <div>
+        <p>Libreta blanca y rosa</p>
+        <input id="amount3" type="number"/>
+        <input id="notebook3" type="button" value="Añadir carrito" />
+    </div>
+
     <script src="buy.js"></script>
 </body>
 </html>
