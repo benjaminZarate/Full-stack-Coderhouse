@@ -12,6 +12,22 @@ let input3 = 'amount3';
 //Lista de productos en el carrito de compras
 const listProducts = [];
 
+function loadProducts()
+{
+    for (let i = 0; i < localStorage.length; i++) {
+        const product = JSON.parse(localStorage.getItem(i));
+        AddNotebook(new Notebook(product.nombre, product.precio, product.envio));
+    }
+    listProducts.forEach(element => {
+        contenedor.innerHTML += `<h3>-${element.nombre} : ${element.precio}</h3>`;
+    });
+    contenedor.innerHTML +=  `<h4>---------------------</h4>`;
+    contenedor.innerHTML +=  `<h2>Envio: $${envioTotal}</h2>`;
+    contenedor.innerHTML +=  `<h2>Total: $${total}</h2>`;
+    document.body.appendChild(contenedor);
+}
+window.onload = loadProducts;
+
 class Notebook
 {
     nombre;
@@ -70,13 +86,22 @@ function ShowProducts()
 {
     contenedor.remove();
     contenedor.innerHTML = ``;
+    let i = 0;
     listProducts.forEach(element => {
         contenedor.innerHTML += `<h3>-${element.nombre} : ${element.precio}</h3>`;
+        const product = {id: i,nombre: element.nombre, precio: element.precio, envio: element.envio};
+        const enJson = JSON.stringify(product);
+        localStorage.setItem(i, enJson);
+        i++;
     });
     contenedor.innerHTML +=  `<h4>---------------------</h4>`;
     contenedor.innerHTML +=  `<h2>Envio: $${envioTotal}</h2>`;
     contenedor.innerHTML +=  `<h2>Total: $${total}</h2>`;
     document.body.appendChild(contenedor);
+    for (let i = 0; i < localStorage.length; i++) {
+        const productResult = JSON.parse(localStorage.getItem(i));
+        console.log(productResult);
+    }
 }
 
 
