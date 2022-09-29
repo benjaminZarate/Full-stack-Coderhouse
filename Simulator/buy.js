@@ -14,13 +14,23 @@ const listProducts = [];
 
 function loadProducts()
 {
+    const libreta1 = [];
+    const libreta2 = [];
+    const libreta3 = [];
+
     for (let i = 0; i < localStorage.length; i++) {
         const product = JSON.parse(localStorage.getItem(i));
-        AddNotebook(new Notebook(product.nombre, product.precio, product.envio));
+        let nombre = product.nombre;
+        let precio = product.precio;
+        let envio = product.envio;
+        nombre === "Libreta horizontal" && libreta1.push(product);
+        nombre === "Libreta horizontal multicolor" && libreta2.push(product);
+        nombre === "Libreta blanca y rosa" && libreta3.push(product); 
+        AddNotebook(new Notebook(nombre, precio, envio));
     }
-    listProducts.forEach(element => {
-        contenedor.innerHTML += `<h3>-${element.nombre} : ${element.precio}</h3>`;
-    });
+    libreta1.length > 0 ? contenedor.innerHTML += `<h3>-${libreta1.length} ${libreta1[0].nombre} : ${libreta1[0].precio}</h3>` : contenedor.innerHTML += '';
+    libreta2.length > 0 ? contenedor.innerHTML += `<h3>-${libreta2.length} ${libreta2[0].nombre} : ${libreta2[0].precio}</h3>` : contenedor.innerHTML += '';
+    libreta3.length > 0 ? contenedor.innerHTML += `<h3>-${libreta3.length} ${libreta3[0].nombre} : ${libreta3[0].precio}</h3>` : contenedor.innerHTML += '';
     contenedor.innerHTML +=  `<h4>---------------------</h4>`;
     contenedor.innerHTML +=  `<h2>Envio: $${envioTotal}</h2>`;
     contenedor.innerHTML +=  `<h2>Total: $${total}</h2>`;
@@ -87,13 +97,26 @@ function ShowProducts()
     contenedor.remove();
     contenedor.innerHTML = ``;
     let i = 0;
+    const libreta1 = [];
+    const libreta2 = [];
+    const libreta3 = [];
+
     listProducts.forEach(element => {
-        contenedor.innerHTML += `<h3>-${element.nombre} : ${element.precio}</h3>`;
-        const product = {id: i,nombre: element.nombre, precio: element.precio, envio: element.envio};
+        let nombre = element.nombre;
+        let precio = element.precio;
+        let envio = element.envio;
+        nombre === "Libreta horizontal" && libreta1.push(element);
+        nombre === "Libreta horizontal multicolor" && libreta2.push(element);
+        nombre === "Libreta blanca y rosa" && libreta3.push(element); 
+        const product = {id: i,nombre: nombre, precio: precio, envio: envio};
         const enJson = JSON.stringify(product);
         localStorage.setItem(i, enJson);
         i++;
     });
+    libreta1.length > 0 ? contenedor.innerHTML += `<h3>-${libreta1.length} ${libreta1[0].nombre} : ${libreta1[0].precio}</h3>` : contenedor.innerHTML += '';
+    libreta2.length > 0 ? contenedor.innerHTML += `<h3>-${libreta2.length} ${libreta2[0].nombre} : ${libreta2[0].precio}</h3>` : contenedor.innerHTML += '';
+    libreta3.length > 0 ? contenedor.innerHTML += `<h3>-${libreta3.length} ${libreta3[0].nombre} : ${libreta3[0].precio}</h3>` : contenedor.innerHTML += '';
+    
     contenedor.innerHTML +=  `<h4>---------------------</h4>`;
     contenedor.innerHTML +=  `<h2>Envio: $${envioTotal}</h2>`;
     contenedor.innerHTML +=  `<h2>Total: $${total}</h2>`;
