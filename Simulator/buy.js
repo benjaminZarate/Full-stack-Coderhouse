@@ -1,3 +1,5 @@
+
+
 let envioTotal = 0; //costos de envios, este aumentara segun la cantidad de productos
 let total = 0; //Precio total a gastar
 
@@ -87,7 +89,18 @@ function NotebookAmount(notebook, input)
     {
         AddNotebook(notebook);
     } 
-    alert("Han sido añadidas con exito");
+    Toastify({
+        text: "Libretas añadidas a su carrito de compra",
+        duration: 3000,
+        newWindow: false,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }// Callback after click
+      }).showToast();
     ShowProducts();
 }
 
